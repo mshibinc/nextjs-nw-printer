@@ -9,12 +9,23 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "axios": "^0.27.2",
+    "fs": "^0.0.1-security",
+    "i": "^0.3.7",
     "next": "12.2.3",
+    "node-thermal-printer": "^4.1.2",
+    "npm": "^8.16.0",
+    "path": "^0.12.7",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
   "devDependencies": {
     "eslint": "8.21.0",
     "eslint-config-next": "12.2.3"
+  },
+  "browser": {
+    "fs": false,
+    "path": false,
+    "os": false
   }
 }

@@ -1,7 +1,18 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  swcMinify: true,
-}
+  webpack: (config, { isServer, node }) => {
+    node = {
+      ...node,
+      fs: false,
+      path: false,
+      child_process: "empty",
+      net: "empty",
+      tls: "empty",
+    };
 
-module.exports = nextConfig
+    return config;
+  },
+};
+
+module.exports = nextConfig;
