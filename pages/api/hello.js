@@ -3,7 +3,6 @@ const ThermalPrinter = require("node-thermal-printer").printer;
 const PrinterTypes = require("node-thermal-printer").types;
 export default function handler(req, res) {
 const { data } = req.body;
-
   let printer = new ThermalPrinter({
     type: PrinterTypes.EPSON,
     interface: 'tcp://192.168.1.250'
@@ -14,7 +13,7 @@ const { data } = req.body;
   // await printer.printImage('./assets/olaii-logo-black.png')
   // printer.cut();
   try {
-    let execute = printer.execute();
+    printer.execute();
     console.error("Print done!");
   } catch (error) {
     console.log("Print failed:", error);
