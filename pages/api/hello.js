@@ -5,7 +5,8 @@ export default function handler(req, res) {
 const { data } = req.body;
   let printer = new ThermalPrinter({
     type: PrinterTypes.EPSON,
-    interface: 'tcp://192.168.1.250'
+    interface: 'tcp://192.168.1.250',
+    port:9100,
   });
 
   printer.alignCenter();
