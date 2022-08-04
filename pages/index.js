@@ -20,7 +20,7 @@ export default function Home() {
   };
   return (
     <div className={styles.container}>
-    <h2>v-1</h2>
+    <h2>v-1.0</h2>
       <input type="text" onChange={(e) => setPrintV(e.target.value)} />
       <p>{printV}</p>
       <button onClick={printDoc}>--------------printer--------------</button>
