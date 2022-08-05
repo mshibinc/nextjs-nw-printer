@@ -17,10 +17,24 @@ export default function Home() {
       .catch((err) => {
         console.log(err);
       });
+    // fetch("./api/hello", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify({data: printV}),
+    // })
+    //   .then((response) => response.json())
+    //   .then((data) => {
+    //     console.log("Success:", data);
+    //   })
+    //   .catch((error) => {
+    //     console.error("Error:", error);
+    //   });
   };
   return (
     <div className={styles.container}>
-    <h2>v-1</h2>
+      <h2>v-1</h2>
       <input type="text" onChange={(e) => setPrintV(e.target.value)} />
       <p>{printV}</p>
       <button onClick={printDoc}>--------------printer--------------</button>
