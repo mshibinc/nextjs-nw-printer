@@ -5,19 +5,19 @@ export default function handler(req, res) {
 const { data } = req.body;
   let printer = new ThermalPrinter({
     type: PrinterTypes.EPSON,
-    interface: 'tcp://192.168.1.250',
+    interface: `tcp://${data.ip}`,
     port:9100,
   });
 
   printer.alignCenter();
-  printer.println(data);
+  printer.println(data.printText);
   // await printer.printImage('./assets/olaii-logo-black.png')
   // printer.cut();
   try {
     printer.execute();
-    console.error("Print done!");
+    console.error("Print done!",data.printText);
   } catch (error) {
     console.log("Print failed:", error);
   }
-  res.status(200).json({ name: data});
+  res.status(200).json({ name: data.printText});
 }

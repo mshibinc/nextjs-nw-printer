@@ -8,11 +8,11 @@ export default function Home() {
     axios
       .post(
         "./api/hello",
-        { data: printV },
+        { data: {printText:printV,ip:'192.168.1.250'} },
         { headers: { "Content-Type": "application/json" } }
       )
       .then((res) => {
-        console.log(res);
+        console.log(res.data);
       })
       .catch((err) => {
         console.log(err);
