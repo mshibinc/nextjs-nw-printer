@@ -5,18 +5,23 @@ import styles from "../styles/Home.module.css";
 export default function Home() {
   const [printV, setPrintV] = useState("");
   const printDoc = () => {
-    axios
-      .post(
-        "./api/hello",
-        { data: {printText:printV,ip:'192.168.1.250'} },
-        { headers: { "Content-Type": "application/json" } }
-      )
-      .then((res) => {
-        console.log(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    axios.get('/api/printers').then(res => {
+      // console.log(res.data);
+    }).catch(err => {
+      console.log(err);
+    });
+    // axios
+    //   .post(
+    //     "./api/hello",
+    //     { data: {printText:printV,ip:'192.168.1.250'} },
+    //     { headers: { "Content-Type": "application/json" } }
+    //   )
+    //   .then((res) => {
+    //     console.log(res.data);
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //   });
     // fetch("./api/hello", {
     //   method: "POST",
     //   headers: {

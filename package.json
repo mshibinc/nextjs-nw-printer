@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "axios": "^0.27.2",
+    "escpos": "^3.0.0-alpha.6",
+    "escpos-network": "^3.0.0-alpha.5",
     "fs": "^0.0.1-security",
     "i": "^0.3.7",
     "next": "12.2.3",
